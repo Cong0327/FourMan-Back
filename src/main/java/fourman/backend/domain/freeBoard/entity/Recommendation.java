@@ -19,7 +19,7 @@ public class Recommendation {
     @JoinColumn(name = "board_id")
     private FreeBoard freeBoard;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "member_id")
     private Member member;
 

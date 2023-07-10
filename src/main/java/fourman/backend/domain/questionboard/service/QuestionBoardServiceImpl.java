@@ -201,7 +201,9 @@ public class QuestionBoardServiceImpl implements QuestionBoardService {
         // 부모 게시물이 최상위 게시물인 경우, 자식 게시물의 depth 값을 1로 설정
         if (parentBoard.getDepth() == 0) {
             questionBoard.setDepth(parentBoard.getDepth() + 1);
-        } else if(parentBoard.getDepth() >= 1){
+        }
+
+        if(questionBoard.getDepth() >= 1){
             // 부모 게시물이 이미 자식 게시물인 경우, 부모 게시물의 depth 값을 가져와 +1 한 뒤 자식 게시물의 depth 값을 설정
             questionBoard.setDepth(questionBoard.getDepth() + 1);
         }
